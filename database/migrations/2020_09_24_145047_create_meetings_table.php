@@ -18,7 +18,9 @@ class CreateMeetingsTable extends Migration
             $table->string('title');
             $table->integer('capacity')->nullable();
             $table->string('detail')->nullable();
-            $table->string('image')->nullable()->after('profile');
+            $table->string('image')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
