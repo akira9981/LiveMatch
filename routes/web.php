@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MeetingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +21,7 @@ use App\Http\Controllers\HomeController;
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+
+Route::get('/meeting', [MeetingController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index']);
