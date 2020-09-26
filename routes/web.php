@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MeetingController;
+use App\Http\Controllers\MyPageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,5 +24,6 @@ use App\Http\Controllers\MeetingController;
 // })->name('dashboard');
 
 Route::get('/meeting', [MeetingController::class, 'index']);
+Route::get('/mypage', [MyPageController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'index']);
