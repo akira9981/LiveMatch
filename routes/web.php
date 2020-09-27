@@ -19,9 +19,9 @@ use App\Http\Controllers\MyPageController;
 //     return view('welcome');
 // });
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 Route::get('/meeting', [MeetingController::class, 'index']);
 Route::get('/mypage', [MyPageController::class, 'index']);
