@@ -25,7 +25,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/meeting', [MeetingController::class, 'index']);
 Route::get('/mypage', [MyPageController::class, 'index']);
-
-Route::get('home', function () {
-    return view('home', ['header' => 'home', 'slot'=> 'contents']);
-});
+Route::get('/home', [HomeController::class, 'index']);

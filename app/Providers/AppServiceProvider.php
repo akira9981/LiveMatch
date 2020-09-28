@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('');
+        View::share('header' , '');
+        View::share('slot' , '');
     }
 }
