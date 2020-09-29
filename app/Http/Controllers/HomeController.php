@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['header' => 'home', 'slot'=> '']);
+        // return view('home', ['header' => 'home', 'slot'=> '']);
+        // $meetingss = Meeting::where('status', 1)->orderBy('created_at', 'DESC')->paginate(12);
+        // return view('home', compact('meetings'));
     }
 }

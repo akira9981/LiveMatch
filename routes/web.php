@@ -24,6 +24,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('message', [MessageController::class, 'index']);
-Route::get('meeting', [MeetingController::class, 'index']);
+// Route::get('meeting', [MeetingController::class, 'index']);
 
-Route::get('home', [HomeController::class, 'index']);
+Route::get('home', [MeetingController::class, 'index']);
