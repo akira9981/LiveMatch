@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>mypage</h1>
+<h1>message</h1>
 @endsection

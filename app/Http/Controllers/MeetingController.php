@@ -8,6 +8,6 @@ class MeetingController extends Controller
 {
     public function index()
     {
-        return view('meeting');
+        return view('meeting', ['header' => 'meeting', 'slot'=> '']);
     }
 }

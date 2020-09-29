@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MeetingController;
-use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/meeting', [MeetingController::class, 'index']);
-Route::get('/mypage', [MyPageController::class, 'index']);
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('message', [MessageController::class, 'index']);
+Route::get('meeting', [MeetingController::class, 'index']);
+
+Route::get('home', [HomeController::class, 'index']);
