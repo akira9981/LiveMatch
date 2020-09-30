@@ -11,6 +11,7 @@ class MeetingController extends Controller
     public function index()
     {
         $meetings = DB::table('meetings')->get();
-        return view('home', compact('meetings'), ['header' => 'meeting', 'slot'=> '']);
+        $users = DB::table('users')->get();
+        return view('home', compact('meetings','users'), ['header' => 'meeting', 'slot'=> '']);
     }
 }
