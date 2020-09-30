@@ -14,7 +14,7 @@
         <p class='description'>
             {{ $meeting->capacity }}
             {{ $meeting->detail }}
-            {{ $meeting->user_id}}
+            {{ $meeting->user->profile }}
         </p>
         <div class="detail-btn">
             <a href=>詳細を読む</a>
