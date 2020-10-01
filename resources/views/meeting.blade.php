@@ -2,5 +2,5 @@
 
 @section('content')
 <h1>meeting</h1>
-{{ $meetings }}
+{{ $meeting }}
 @endsection
