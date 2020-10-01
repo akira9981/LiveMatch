@@ -60,7 +60,7 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function meetings()
+    public function meeting()
     {
         return $this->hasMany('App\Models\Meeting');
     }

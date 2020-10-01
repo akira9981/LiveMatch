@@ -14,10 +14,10 @@
         <p class='description'>
             {{ $meeting->capacity }}
             {{ $meeting->detail }}
-            {{ $meeting->user->profile }}
+            {{ $meeting->user->name }}
         </p>
         <div class="detail-btn">
-            <a href=>詳細を読む</a>
+        <a href={{url("meeting/{$meeting->id}")}}>詳細へ進む<a>
         </div>
     </div>
   @endforeach
