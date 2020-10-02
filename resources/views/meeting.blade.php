@@ -22,4 +22,6 @@
 {{ $meeting->user->age }}
 {{ $meeting->user->gender }}
 {{ $meeting->user->profile }}
+
+{{ $entries }}
 @endsection

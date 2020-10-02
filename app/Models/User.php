@@ -64,4 +64,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Meeting');
     }
+
+    public function entry()
+    {
+        return $this->hasMany('App\Models\Entry');
+    }
 }

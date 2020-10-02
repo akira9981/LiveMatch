@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Meeting extends Model
+class Entry extends Model
 {
     public function user()
     {
         return $this->belongsTo('App\Models\User');
     }
 
-    public function entry()
+    public function meeting()
     {
-        return $this->hasMany('App\Models\Entry');
+        return $this->belongsTo('App\Models\Meeting');
     }
 }
