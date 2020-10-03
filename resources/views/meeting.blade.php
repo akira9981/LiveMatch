@@ -23,5 +23,16 @@
 {{ $meeting->user->gender }}
 {{ $meeting->user->profile }}
 
-{{ $entries }}
+<p class>{{ $total }}　人から応募があります。</p>
+
+@foreach($entries as $entry)
+    <div class="card-body">
+        @if(!empty($entry->user->image))
+        <div class='image-wrapper'><img class='review-image' src={{ $entry->image }}></div>
+        @else
+        <div class='image-wrapper'><img class='review-image' src="{{ asset('images/noimage.jpg') }}"></div>
+        @endif
+        <h3 class='review-title'>{{ $entry->user->name }}</h3>
+    </div>
+@endforeach
 @endsection

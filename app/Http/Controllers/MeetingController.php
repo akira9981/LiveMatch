@@ -19,7 +19,8 @@ class MeetingController extends Controller
     public function show(Request $request, $id)
     {
         $meeting = Meeting::with('user')->find($id);
-        $entries = DB::table('entries')->where('meetings_id', $id)->get();
-        return view('meeting', compact('meeting','entries'), ['header' => 'meeting', 'slot'=> '']);
+        $entries = Entry::with('user')->where('meetings_id', $id)->get();
+        $total = $entries->count();
+        return view('meeting', compact('meeting','entries','total'), ['header' => 'meeting', 'slot'=> '']);
     }
 }
