@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Meeting extends Model
 {
+    protected $guarded = array('id','user_id');
+    protected $fillable = ['title','capacity','detail'];
+    
+    public static $rules = array(
+        'title' => 'required|max:255',
+        'capacity' => 'required|integer',
+        'detail' => 'required'
+    );
+    
     public function user()
     {
         return $this->belongsTo('App\Models\User');
