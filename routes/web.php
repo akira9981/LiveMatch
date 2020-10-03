@@ -26,6 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('message', [MessageController::class, 'index']);
 Route::get('meeting/{id}', [MeetingController::class, 'show']);
-Route::get('post', [MeetingController::class, 'create']);
+Route::get('create', [MeetingController::class, 'create']);
+Route::post('create', [MeetingContoroller::class, 'post']);
 
 Route::get('home', [MeetingController::class, 'index']);

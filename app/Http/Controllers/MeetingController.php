@@ -18,15 +18,16 @@ class MeetingController extends Controller
 
     public function create()
     {
-        return view('post', ['header' => 'post', 'slot'=> '']);
+        return view('create', ['header' => 'create', 'slot'=> '']);
     }
 
-    public function store(Request $request)
+    public function post(Request $request)
     {
         $this->validate($request, Meeting::$rules);
         $meeting = new Meeting;
         $form = $request->all();
-        
+        $meeting->fill($form)->save();
+        return redirect('home');
     }
 
     public function show(Request $request, $id)
