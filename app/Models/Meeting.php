@@ -7,14 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Meeting extends Model
 {
-    protected $guarded = array('id');
-    protected $fillable = ['title','capacity','detail'];
+    // protected $guarded = array('id');
+    // protected $fillable = ['title','capacity','detail'];
     
-    public static $rules = array(
-        'title' => 'required|max:255',
-        'capacity' => 'required|integer',
-        'detail' => 'required'
-    );
+    // public static $rules = array(
+    //     'title' => 'required|max:255',
+    //     'capacity' => 'required|integer',
+    //     'detail' => 'required',
+    //     'create_at' => 'required',
+    //     'update_at' => 'required'
+    // );
     
     public function user()
     {

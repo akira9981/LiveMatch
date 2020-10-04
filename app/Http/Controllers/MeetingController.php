@@ -17,18 +17,19 @@ class MeetingController extends Controller
         return view('home', compact('meetings'), ['header' => 'home', 'slot'=> '']);
     }
 
-    public function create(Request $request, $user_id)
+    public function create(Request $request)
     {
-        $user_id = Auth::id();
-        return view('create', compact('user_id'),['header' => 'create', 'slot'=> '']);
+        return view('create',['header' => 'create', 'slot'=> '']);
     }
 
     public function store(Request $request)
     {
+        dd($request);
         $this->validate($request, Meeting::$rules);
         $meeting = new Meeting;
         $form = $request->all();
-        $meeting->fill($form, Auth::id())->save();
+        $meeting = ['user_id' => \Auth::id(), 'title' => $form['title'], 'capacity' => $form['capacity'], 'detail' => $form['capacity']];
+        Meeting::insert($meeting);
         return redirect('home');
     }
 

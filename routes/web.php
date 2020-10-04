@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/message', [MessageController::class, 'index']);
 Route::get('/meeting/{id}', [MeetingController::class, 'show']);
-Route::get('/create/{user_id}', [MeetingController::class, 'create']);
+Route::get('/create', [MeetingController::class, 'create']);
 Route::post('/create', [MeetingController::class, 'store']);
 
 Route::get('/home', [MeetingController::class, 'index']);
