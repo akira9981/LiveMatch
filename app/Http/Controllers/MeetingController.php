@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Meeting;
 use App\Models\Entry;
@@ -16,17 +17,18 @@ class MeetingController extends Controller
         return view('home', compact('meetings'), ['header' => 'home', 'slot'=> '']);
     }
 
-    public function create()
+    public function create(Request $request, $user_id)
     {
-        return view('create', ['header' => 'create', 'slot'=> '']);
+        $user_id = Auth::id();
+        return view('create', compact('user_id'),['header' => 'create', 'slot'=> '']);
     }
 
-    public function post(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, Meeting::$rules);
         $meeting = new Meeting;
         $form = $request->all();
-        $meeting->fill($form)->save();
+        $meeting->fill($form, Auth::id())->save();
         return redirect('home');
     }
 

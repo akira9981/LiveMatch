@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>home</h1>
+<a href={{url("create/{Auth::id()}")}}>募集する</a>
 <div class="main-contents">
   @foreach($meetings as $meeting)
     <div class="card-body">

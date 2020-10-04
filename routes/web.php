@@ -16,17 +16,13 @@ use App\Http\Controllers\EntryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('message', [MessageController::class, 'index']);
-Route::get('meeting/{id}', [MeetingController::class, 'show']);
-Route::get('create', [MeetingController::class, 'create']);
-Route::post('create', [MeetingContoroller::class, 'post']);
+Route::get('/message', [MessageController::class, 'index']);
+Route::get('/meeting/{id}', [MeetingController::class, 'show']);
+Route::get('/create/{user_id}', [MeetingController::class, 'create']);
+Route::post('/create', [MeetingController::class, 'store']);
 
-Route::get('home', [MeetingController::class, 'index']);
+Route::get('/home', [MeetingController::class, 'index']);
