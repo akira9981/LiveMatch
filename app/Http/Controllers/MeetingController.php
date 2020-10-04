@@ -27,7 +27,7 @@ class MeetingController extends Controller
         $this->validate($request, Meeting::$rules);
         $meeting = new Meeting;
         $form = $request->all();
-        $meeting = ['user_id' => \Auth::id(), 'title' => $form['title'], 'capacity' => $form['capacity'], 'detail' => $form['capacity']];
+        $meeting = ['user_id' => \Auth::id(), 'title' => $form['title'], 'capacity' => $form['capacity'], 'detail' => $form['detail']];
         Meeting::insert($meeting);
         return redirect('home');
     }
