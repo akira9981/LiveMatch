@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entry extends Model
 {
+    protected $fillable = ['meetings_id','user_id'];
+
     public function user()
     {
         return $this->belongsTo('App\Models\User');

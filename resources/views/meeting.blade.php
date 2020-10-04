@@ -14,6 +14,8 @@
         {{ $meeting->detail }}
     </p>
     <div class="detail-btn">
+    <a href={{url("meeting/{$meeting->id}/entry")}}>応募する<a>
+    <a href={{url("meeting/{$meeting->id}/cancel")}}>取り消す<a>
     <a href={{url("home")}}>ホームへ戻る<a>
     </div>
 </div>
