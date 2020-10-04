@@ -24,7 +24,6 @@ class MeetingController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
         $this->validate($request, Meeting::$rules);
         $meeting = new Meeting;
         $form = $request->all();
