@@ -13,28 +13,31 @@
         {{ $meeting->capacity }}
         {{ $meeting->detail }}
     </p>
+
     <div class="detail-btn">
+    @if(empty($array->user_id))
     <a href={{url("meeting/{$meeting->id}/entry")}}>応募する<a>
+    @else
     <a href={{url("meeting/{$meeting->id}/cancel")}}>取り消す<a>
+    @endif
     <a href={{url("home")}}>ホームへ戻る<a>
     </div>
 </div>
-
 {{ $meeting->user->name }}
 {{ $meeting->user->age }}
 {{ $meeting->user->gender }}
 {{ $meeting->user->profile }}
-
 <p class>{{ $total }}　人から応募があります。</p>
 
 @foreach($entries as $entry)
     <div class="card-body">
         @if(!empty($entry->user->image))
-        <div class='image-wrapper'><img class='review-image' src={{ $entry->image }}></div>
+        <div class='image-wrapper'><img class='review-image' src={{ $entry->user->image }}></div>
         @else
         <div class='image-wrapper'><img class='review-image' src="{{ asset('images/noimage.jpg') }}"></div>
         @endif
         <h3 class='review-title'>{{ $entry->user->name }}</h3>
     </div>
 @endforeach
+
 @endsection

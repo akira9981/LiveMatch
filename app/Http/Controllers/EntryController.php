@@ -17,8 +17,6 @@ class EntryController extends Controller
         $entry = ['user_id' => Auth::id(), 'meetings_id' => $id];
         Entry::insert($entry);
       
-        session()->flash('success', 'You Liked the Reply.');
-      
         return redirect()->back();
     }
 
@@ -26,8 +24,6 @@ class EntryController extends Controller
     {
         $entry = Entry::where('meetings_id', $id)->where('user_id', Auth::id())->first();
         $entry->delete();
-
-        session()->flash('success', 'You Unliked the Reply.');
 
         return redirect()->back();
     }
