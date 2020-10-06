@@ -20,10 +20,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/message', [MessageController::class, 'index']);
 Route::get('/meeting/{id}', [MeetingController::class, 'show']);
 Route::get('/create', [MeetingController::class, 'create']);
 Route::post('/create', [MeetingController::class, 'store']);
 Route::get('/meeting/{id}/entry', [EntryController::class, 'entry']);
 Route::get('/meeting/{id}/cancel', [EntryController::class, 'cancel']);
+Route::get('/message', [MessageController::class, 'index']);
 Route::get('/home', [MeetingController::class, 'index']);

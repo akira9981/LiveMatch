@@ -3,6 +3,7 @@
 @section('content')
 <h1>home</h1>
 <a href={{url("/create")}}>募集する</a>
+<a href={{url("/message")}}>メールボックス</a>
 <div class="main-contents">
   @foreach($meetings as $meeting)
     <div class="card-body">
