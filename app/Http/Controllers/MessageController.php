@@ -15,4 +15,14 @@ class MessageController extends Controller
 
         return view('message', ['header' => 'message', 'slot'=> '']);
     }
+
+    public function store(Request $request, $id)
+    {
+        $this->validate($request, Message::$rules);
+        $message = new Message;
+        $form = $request->all();
+        $message = ['send' => \Auth::id(), 'recieve' => $id, 'reieve' => $form['message']];
+        Message::insert($message);
+        return redirect('/message');
+    }
 }
