@@ -37,7 +37,7 @@ class MeetingController extends Controller
         $meeting = Meeting::with('user')->find($id);
         $entries = Entry::with('user')->where('meetings_id', $id)->get();
         $total = $entries->count();
-        $array = $entries->firstWhere('user_id', Auth::id());
-        return view('meeting', compact('meeting','entries','total','array'), ['header' => 'meeting', 'slot'=> '']);
+        $switching = $entries->firstWhere('user_id', Auth::id());
+        return view('meeting', compact('meeting','entries','total','switching'), ['header' => 'meeting', 'slot'=> '']);
     }
 }

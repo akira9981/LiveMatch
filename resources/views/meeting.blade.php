@@ -15,7 +15,7 @@
     </p>
 
     <div class="detail-btn">
-    @if(empty($array->user_id))
+    @if(empty($switching->user_id))
     <a href={{url("meeting/{$meeting->id}/entry")}}>応募する<a>
     @else
     <a href={{url("meeting/{$meeting->id}/cancel")}}>取り消す<a>
