@@ -15,6 +15,7 @@
 <h2>------------</h2>
 {{$entry->meetings->title}}<br>
 {{$entry->meetings->user->name}}<br>
+{{$entry->meetings->user->image}}
 @endforeach
 
 <h2>チャット画面</h2>
