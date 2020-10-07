@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Meeting;
 use App\Models\Entry;
@@ -12,8 +14,11 @@ class MessageController extends Controller
 {
     public function index()
     {
-
-        return view('message', ['header' => 'message', 'slot'=> '']);
+        $meetings = Meeting::with('user')->where('user_id', Auth::id())->get();
+        $entries = Entry::with('meetings')->where('user_id', Auth::id())->get();
+        $meeting_total = $meetings ->count();
+        $entry_total = $entries->count();
+        return view('message', compact('meetings','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
     }
 
     public function store(Request $request, $id)

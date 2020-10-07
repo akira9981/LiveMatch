@@ -14,7 +14,7 @@ class Entry extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function meeting()
+    public function meetings()
     {
         return $this->belongsTo('App\Models\Meeting');
     }
