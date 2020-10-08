@@ -16,6 +16,7 @@ class MessageController extends Controller
     {
         $meetings = Meeting::with('user')->where('user_id', Auth::id())->get();
         $entries = Entry::with('meetings')->where('user_id', Auth::id())->get();
+        // $messages = Message::with('user')->where('recive', $id);
         $meeting_total = $meetings ->count();
         $entry_total = $entries->count();
         return view('message', compact('meetings','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
