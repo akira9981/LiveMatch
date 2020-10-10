@@ -5,19 +5,20 @@
 <a href={{url("/")}}>募集</a>
 
 <h1>{{ $meeting_total }}件の募集中</h1><br>
-
-@foreach($meetings as $meeting)
-{{ $meeting->title }}<br>
+@foreach($main_meetings as $main_meeting)
+{{ $main_meeting->title }}<br>
+{{ $entries->firstwhere('meetings_id', $main_meeting->id)}}<br>
 @endforeach
+
 <br>
 <h2>{{$entry_total}}件の参加申請</h2>
 <br>
 
-@foreach($entries as $entry)
+@foreach($main_entries as $main_entry)
 <h2>------------</h2>
-{{$entry->meetings->title}}<br>
-{{$entry->meetings->user->name}}<br>
-{{$entry->meetings->user->image}}
+{{$main_entry->meetings->title}}<br>
+{{$main_entry->meetings->user->name}}<br>
+{{$main_entry->meetings->user->image}}
 @endforeach
 <br>
 
@@ -32,26 +33,17 @@
   @endforeach
 @endif
 
-<h1>投稿ページ</h1>
 <div class="review-contents">
-  <h1 class='pagetitle'>投稿フォーム</h1>
+  <h1 class='pagetitle'>フォーム</h1>
   <form method='post' action="/message/{id}">
     {{ csrf_field() }}
     <div class="review-body">
       <div class="form-group">
-        <label>title</label>
-        <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
-      </div>
-      <div class="form-group">
-        <label>募集人数</label>
-        <input type='number' class='form-control' name='capacity' placeholder='人数を入力' min="1" max="100">
-      </div>
-      <div class="form-group">
-        <label>詳細</label>
-        <input type='text' class='form-control' name='detail' placeholder='詳細を入力'>
+        <label>メッセージ</label>
+        <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
       </div>
       <div class="btn-wrapper">
-        <input type='submit' class='btn-primary' value='募集する'>
+        <input type='submit' class='btn-primary' value='送信'>
       </div>
     </div>
   </form>

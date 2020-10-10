@@ -14,12 +14,14 @@ class MessageController extends Controller
 {
     public function index()
     {
-        $meetings = Meeting::with('user')->where('user_id', Auth::id())->get();
-        $entries = Entry::with('meetings')->where('user_id', Auth::id())->get();
+        $meetings = Meeting::with('user')->get();
+        $entries = Entry::with('user','meetings')->get();
+        $main_meetings = $meetings->where('user_id', Auth::id());
+        $main_entries = $entries->where('user_id', Auth::id());
         // $messages = Message::with('user')->where('recive', $id);
-        $meeting_total = $meetings ->count();
-        $entry_total = $entries->count();
-        return view('message', compact('meetings','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
+        $meeting_total = $main_meetings ->count();
+        $entry_total = $main_entries->count();
+        return view('message', compact('main_meetings','main_entries','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
     }
 
     public function store(Request $request, $id)
