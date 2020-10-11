@@ -9,6 +9,7 @@
   @foreach($entry_users->getEntryUser($entries,$main_meeting->id) as $entry_user)
   {{ $entry_user->user->name }}<br>
   @endforeach
+  -----------------<br>
 @endforeach
 <br>
 <h2>{{$entry_total}}件の参加申請</h2>
