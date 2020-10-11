@@ -35,7 +35,7 @@ class MessageController extends Controller
         $this->validate($request, Message::$rules);
         $message = new Message;
         $form = $request->all();
-        $message = ['send' => \Auth::id(), 'recieve' => $id, 'message' => $form['message']];
+        $message = ['send' => \Auth::id(), 'recieve' => $form['recieve'], 'message' => $form['message']];
         Message::insert($message);
         return redirect()->back();
     }

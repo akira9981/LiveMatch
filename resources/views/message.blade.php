@@ -33,7 +33,7 @@
   {{$message->created_at}}<br>
   @endforeach
 @endif
-{{$id}}
+
 <div class="review-contents">
   <h1 class='pagetitle'>フォーム</h1>
   <form method='post' action="/message">
@@ -41,7 +41,7 @@
     <div class="review-body">
       <div class="form-group">
         <label>メッセージ</label>
-        <input type="hidden" name="recieve" value="" >
+        <input type="hidden" name="recieve" value="{{$id->id}}" >
         <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
       </div>
       <div class="btn-wrapper">
