@@ -19,7 +19,7 @@
 @foreach($main_entries as $main_entry)
 <h2>------------</h2>
 {{$main_entry->meetings->title}}<br>
-{{$main_entry->meetings->user->name}}<br>
+<a href={{url("message/{$main_entry->meetings->user_id}")}}>{{$main_entry->meetings->user->name}}</a><br>
 {{$main_entry->meetings->user->image}}
 @endforeach
 <br>
