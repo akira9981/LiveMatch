@@ -1,15 +1,15 @@
 @extends('layouts.app')
-
+@inject('entry_users','App\Services\MessageService')
 @section('content')
 <h1>message</h1>
 <a href={{url("/")}}>募集</a>
-
 <h1>{{ $meeting_total }}件の募集中</h1><br>
 @foreach($main_meetings as $main_meeting)
 {{ $main_meeting->title }}<br>
-{{ $entries->firstwhere('meetings_id', $main_meeting->id)}}<br>
+  @foreach($entry_users->getEntryUser($entries,$main_meeting->id) as $entry_user)
+  {{ $entry_user->user->name }}<br>
+  @endforeach
 @endforeach
-
 <br>
 <h2>{{$entry_total}}件の参加申請</h2>
 <br>
