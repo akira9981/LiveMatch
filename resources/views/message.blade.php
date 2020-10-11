@@ -33,7 +33,7 @@
   {{$message->created_at}}<br>
   @endforeach
 @endif
-
+{{$id}}
 <div class="review-contents">
   <h1 class='pagetitle'>フォーム</h1>
   <form method='post' action="/message">
