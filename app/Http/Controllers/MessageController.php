@@ -29,7 +29,7 @@ class MessageController extends Controller
         return redirect()->action([MessageController::class, 'index'], ['id' => $id]);
     }
 
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $this->validate($request, Message::$rules);
         $message = new Message;

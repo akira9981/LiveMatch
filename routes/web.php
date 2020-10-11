@@ -27,4 +27,5 @@ Route::get('/meeting/{id}/entry', [EntryController::class, 'entry']);
 Route::get('/meeting/{id}/cancel', [EntryController::class, 'cancel']);
 Route::get('/message', [MessageController::class, 'index']);
 Route::get('/message/{id}', [MessageController::class, 'form']);
+Route::post('/message', [MessageController::class, 'store']);
 Route::get('/home', [MeetingController::class, 'index']);
