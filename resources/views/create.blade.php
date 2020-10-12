@@ -3,7 +3,7 @@
 @section('content')
 <h1>投稿ページ</h1>
 <div class="review-contents">
-  <h1 class='pagetitle'>レビュー投稿ページ</h1>
+  <h1 class='pagetitle'>投稿ページ</h1>
   <form method='post' action="/create">
     {{ csrf_field() }}
     <div class="review-body">
