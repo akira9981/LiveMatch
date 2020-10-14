@@ -15,7 +15,7 @@
                     <x-jet-nav-link href="/home" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/home" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="/user/profile" :active="request()->routeIs('dashboard')">
                         {{ __('MyPage') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="/create" :active="request()->routeIs('dashboard')">
