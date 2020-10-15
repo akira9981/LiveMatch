@@ -19,8 +19,8 @@ class MeetingController extends Controller
 
     public function myMeeting(Request $request)
     {
-        // $meetings = DB::table('meetings')->where('user_id',Auth::id())->get();
-        $meetings = Meeting::with('entry')->where('user_id',Auth::id())->get();
+        $meetings = DB::table('meetings')->where('user_id',Auth::id())->get();
+        
         return view('my_meeting',compact('meetings'),['header' => 'my meeting', 'slot'=> '']);
     }
 
