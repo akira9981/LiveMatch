@@ -21,11 +21,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/meeting/{id}', [MeetingController::class, 'show']);
-Route::get('/create', [MeetingController::class, 'create']);
-Route::post('/create', [MeetingController::class, 'store']);
 Route::get('/meeting/{id}/entry', [EntryController::class, 'entry']);
 Route::get('/meeting/{id}/cancel', [EntryController::class, 'cancel']);
+Route::get('/create', [MeetingController::class, 'create']);
+Route::post('/create', [MeetingController::class, 'store']);
 Route::get('/message', [MessageController::class, 'index']);
 Route::get('/message/{id}', [MessageController::class, 'form']);
 Route::post('/message', [MessageController::class, 'store']);
+Route::get('/my_meeting', [MeetingController::class, 'myMeeting']);
 Route::get('/home', [MeetingController::class, 'index']);
