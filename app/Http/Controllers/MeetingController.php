@@ -13,14 +13,13 @@ class MeetingController extends Controller
 {
     public function index()
     {
-        $meetings = Meeting::with('user')->get();
+        $meetings = Meeting::with('user')->whereNotIn('user_id', [Auth::id()])->get();
         return view('home', compact('meetings'), ['header' => 'home', 'slot'=> '']);
     }
 
     public function myMeeting(Request $request)
     {
         $meetings = DB::table('meetings')->where('user_id',Auth::id())->get();
-        
         return view('my_meeting',compact('meetings'),['header' => 'my meeting', 'slot'=> '']);
     }
 
