@@ -23,6 +23,12 @@ class MeetingController extends Controller
         return view('my_meeting',compact('meetings'),['header' => 'my meeting', 'slot'=> '']);
     }
 
+    public function edit(Request $request, $id)
+    {
+        $meeting = Meeting::with('user')->find($id);
+        return view('edit', compact('meeting'), ['header' => 'edit', 'slot'=> '']);
+    }
+
     public function create(Request $request)
     {
         return view('create',['header' => 'create', 'slot'=> '']);

@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<a href={{url("/create")}}>募集する</a>
 <div class="main-contents">
-  @foreach($meetings as $meeting)
     <div class="card-body">
         @if(!empty($meeting->user->image))
         <div class='image-wrapper'><img class='review-image' src={{ $meeting->image }}></div>
@@ -14,11 +12,7 @@
         <p class='description'>
             {{ $meeting->capacity }}<br>
             {{ $meeting->detail }}<br>
+            {{ $meeting->user->name }}<br>
         </p>
-        <div class="detail-btn">
-        <a href={{url("meeting/{$meeting->id}/edit")}}>編集する<a>
-        <a href={{url("meeting/{$meeting->id}")}}>詳細へ進む<a>
-        </div>
     </div>
-  @endforeach
 @endsection

@@ -21,6 +21,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/meeting/{id}', [MeetingController::class, 'show']);
+Route::get('/meeting/{id}/edit', [MeetingController::class, 'edit']);
 Route::get('/meeting/{id}/entry', [EntryController::class, 'entry']);
 Route::get('/meeting/{id}/cancel', [EntryController::class, 'cancel']);
 Route::get('/create', [MeetingController::class, 'create']);
