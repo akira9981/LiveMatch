@@ -29,6 +29,15 @@ class MeetingController extends Controller
         return view('edit', compact('meeting'), ['header' => 'edit', 'slot'=> '']);
     }
 
+    public function update(Request $request)
+    {
+        $this->validate($request, Meeting::$rules);
+        $meeting = new Meeting;
+        $form = $request->all();
+        $meeting = Meeting::with('user')->find($id)->update(['user_id' => \Auth::id(), 'title' => $form['title'], 'capacity' => $form['capacity'], 'detail' => $form['detail']]);
+        return redirect('my_meeting');
+    }
+
     public function create(Request $request)
     {
         return view('create',['header' => 'create', 'slot'=> '']);
