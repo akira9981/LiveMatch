@@ -31,10 +31,21 @@ class MeetingController extends Controller
 
     public function update(Request $request)
     {
-        $this->validate($request, Meeting::$rules);
         $meeting = new Meeting;
         $form = $request->all();
-        $meeting = Meeting::with('user')->find($id)->update(['user_id' => \Auth::id(), 'title' => $form['title'], 'capacity' => $form['capacity'], 'detail' => $form['detail']]);
+        $meeting = Meeting::with('user')->find($request->id)->update(['user_id' => \Auth::id(), 'title' => $form['title'], 'capacity' => $form['capacity'], 'detail' => $form['detail']]);
+        return redirect('my_meeting');
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $meeting = Meeting::with('user')->find($id);
+        return view('delete', compact('meeting'), ['header' => 'delete', 'slot'=> '']);
+    }
+
+    public function remove(Request $request)
+    {
+        Meeting::with('user')->find($request->id)->delete();
         return redirect('my_meeting');
     }
 

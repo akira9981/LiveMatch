@@ -15,7 +15,7 @@
             {{ $meeting->user->name }}<br>
         </p>
     </div>
-    <form method='post' action="/my_meeting">
+    <form method='post' action="/meeting/{{$meeting->id}}/update">
     {{ csrf_field() }}
     <div class="review-body">
       <div class="form-group">
