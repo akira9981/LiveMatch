@@ -4,10 +4,10 @@
 <h1>message</h1>
 <p>募集</p>
 <h1>{{ $meeting_total }}件の募集中</h1><br>
-@foreach($main_meetings as $main_meeting)
-{{ $main_meeting->title }}<br>
+@foreach($meetings as $meeting)
+{{ $meeting->title }}<br>
 <p>申請中のユーザー</p>
-  @foreach($entry_users->getEntryUser($entries,$main_meeting->id) as $entry_user)
+  @foreach($entry_users->getEntryUser($entries,$meeting->id) as $entry_user)
   <a href={{url("message/{$entry_user->user->id}")}}>{{ $entry_user->user->name }}</a><br>
   @endforeach
   -----------------<br>
@@ -29,6 +29,7 @@
 @else
   @foreach($main_messages as $message)
   {{$message->message}}<br>
+  {{$message->user->name}}<br>
   {{$message->created_at}}<br>
   @endforeach
 @endif

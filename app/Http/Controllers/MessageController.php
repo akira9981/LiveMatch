@@ -14,16 +14,14 @@ class MessageController extends Controller
 {
     public function index(Request $request)
     {
-        $meetings = Meeting::with('user')->get();
+        $meetings = Meeting::with('user')->where('user_id', Auth::id())->get();
         $entries = Entry::with('user','meetings')->get();
         $messages = Message::with('user')->get();
-        dd($messages);
         $main_messages = $messages->where('send', Auth::id())->where('recieve', $request->id);
-        $main_meetings = $meetings->where('user_id', Auth::id());
         $main_entries = $entries->where('user_id', Auth::id());
-        $meeting_total = $main_meetings ->count();
+        $meeting_total = $meetings ->count();
         $entry_total = $main_entries->count();
-        return view('message', compact('request','main_messages','main_meetings','main_entries','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
+        return view('message', compact('request','main_messages','meetings','main_entries','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
     }
 
     public function form($id)
