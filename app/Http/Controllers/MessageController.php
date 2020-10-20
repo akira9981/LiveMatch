@@ -16,12 +16,12 @@ class MessageController extends Controller
     {
         $meetings = Meeting::with('user')->where('user_id', Auth::id())->get();
         $entries = Entry::with('user','meetings')->get();
-        $messages = Message::with('user')->get();
-        $main_messages = $messages->where('send', Auth::id())->where('recieve', $request->id);
+        $messages = Message::with('user')->where('send', Auth::id())->where('recieve', $request->id)->get();
+        // $main_messages = $messages->where('send', Auth::id())->where('recieve', $request->id);
         $main_entries = $entries->where('user_id', Auth::id());
         $meeting_total = $meetings ->count();
         $entry_total = $main_entries->count();
-        return view('message', compact('request','main_messages','meetings','main_entries','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
+        return view('message', compact('request','messages','meetings','main_entries','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
     }
 
     public function form($id)

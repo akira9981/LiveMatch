@@ -24,10 +24,10 @@
 @endforeach
 <br>
 <h2>チャット画面</h2><br>
-@if(empty($main_messages))
+@if(empty($messages))
   <h1>メッセージがありません</h1>
 @else
-  @foreach($main_messages as $message)
+  @foreach($messages as $message)
   {{$message->message}}<br>
   {{$message->user->name}}<br>
   {{$message->created_at}}<br>
