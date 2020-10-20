@@ -15,9 +15,12 @@ class MessageController extends Controller
     public function index(Request $request)
     {
         $meetings = Meeting::with('user')->where('user_id', Auth::id())->get();
+        $messages = Message::with('user')->where(function($query) use($request){
+                    $query->where('send', Auth::id())->where('recieve', $request->id);
+                    })->orWhere(function($query) use($request){
+                    $query->where('send', $request->id)->where('recieve', Auth::id());
+                    })->get();
         $entries = Entry::with('user','meetings')->get();
-        $messages = Message::with('user')->where('send', Auth::id())->where('recieve', $request->id)->get();
-        // $main_messages = $messages->where('send', Auth::id())->where('recieve', $request->id);
         $main_entries = $entries->where('user_id', Auth::id());
         $meeting_total = $meetings ->count();
         $entry_total = $main_entries->count();
