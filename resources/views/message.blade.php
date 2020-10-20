@@ -24,11 +24,10 @@
 @endforeach
 <br>
 <h2>チャット画面</h2><br>
-@if(empty($messages))
+@if(empty($main_messages))
   <h1>メッセージがありません</h1>
 @else
-  @foreach($messages as $message)
-  {{$message->user->name}}<br>
+  @foreach($main_messages as $message)
   {{$message->message}}<br>
   {{$message->created_at}}<br>
   @endforeach
@@ -41,7 +40,7 @@
     <div class="review-body">
       <div class="form-group">
         <label>メッセージ</label>
-        <input type="hidden" name="recieve" value="{{$id->id}}" >
+        <input type="hidden" name="recieve" value="{{$request->id}}" >
         <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
       </div>
       <div class="btn-wrapper">

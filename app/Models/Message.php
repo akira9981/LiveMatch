@@ -13,9 +13,8 @@ class Message extends Model
     public static $rules = array(
         'message' => 'required'
     );
-
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('App\Models\User','send', 'id');
     }
 }
