@@ -13,6 +13,6 @@ class GuestController extends Controller
 {
   public function index(){
     $meetings = Meeting::with('user')->get();
-    return view('guest', compact('meetings'), ['header' => 'home', 'slot'=> '']);
+    return view('guest', compact('meetings'), ['header' => 'Guest']);
   }
 }
