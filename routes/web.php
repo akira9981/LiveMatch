@@ -20,7 +20,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::post('/create', [MeetingController::class, 'store']);
 Route::get('/meeting/{id}', [MeetingController::class, 'show'])->middleware('auth');
 Route::get('/meeting/{id}/edit', [MeetingController::class, 'edit'])->middleware('auth');
 Route::post('/meeting/{id}/update', [MeetingController::class, 'update'])->middleware('auth');
