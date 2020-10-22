@@ -12,16 +12,16 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-2 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="/home" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="/home">
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/user/profile" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="/user/profile">
                         {{ __('MyPage') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/create" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="/create">
                         {{ __('Create') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/message" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="/message">
                         {{ __('Message') }}
                     </x-jet-nav-link>
                 </div>
