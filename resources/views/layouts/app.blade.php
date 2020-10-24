@@ -25,8 +25,8 @@
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
                 <form method='get' action="/search">
-                    <input type="text" class="form-control" name="search" value="{{ old('search', 'デフォルト') }}">
-                    <button type="submit" class="btn btn-success">登録</button>
+                    <input type="text" class="form-control" name="search">
+                    <button type="submit" class="btn btn-success">検索</button>
                 </form>
                 </div>
             </header>
