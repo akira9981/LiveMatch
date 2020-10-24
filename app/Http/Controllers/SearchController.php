@@ -17,11 +17,19 @@ class SearchController extends Controller
     $keyword = $request->input('search');
     $query = Meeting::query();
     if (!empty($keyword)) {
-        $query->where('title', 'LIKE', "%{$keyword}%");
-    }else {
-        $meetings = Meeting::orderBy('created_at','desc');
+      $query->whereNotIn('user_id', [Auth::id()])->where('title', 'LIKE', "%{$keyword}%");
+    }else{
+      $query->whereNotIn('user_id', [Auth::id()]);
     }
     $meetings = $query->get();
-    return view('search', compact('meetings'), ['header' => 'Search', 'slot'=> '']);
+
+    $user = User::query();
+    if (!empty($keyword)) {
+      $user->whereNotIn('id', [Auth::id()])->where('name', 'LIKE', "%{$keyword}%");
+    }else{
+      $user->whereNotIn('id', [Auth::id()]);
+    }
+    $users = $user->get();
+    return view('search', compact('meetings','users'), ['header' => 'Search', 'slot'=> '']);
   }
 }
