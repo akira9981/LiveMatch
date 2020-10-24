@@ -15,10 +15,14 @@
     </p>
 
     <div class="detail-btn">
-    @if(empty($switching->user_id))
-    <a href={{url("meeting/{$meeting->id}/entry")}}>応募する<a>
+    @if($meeting->user->id == Auth::id())
+        <p>本人です</p>
     @else
-    <a href={{url("meeting/{$meeting->id}/cancel")}}>取り消す<a>
+        @if(empty($switching->user_id))
+        <a href={{url("meeting/{$meeting->id}/entry")}}>応募する<a>
+        @else
+        <a href={{url("meeting/{$meeting->id}/cancel")}}>取り消す<a>
+        @endif
     @endif
     <a href={{url("home")}}>ホームへ戻る<a>
     </div>

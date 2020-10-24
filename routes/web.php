@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\EntryController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/', [GuestController::class, 'index']);
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/search', [SearchController::class, 'index']);
     Route::get('/meeting/{id}', [MeetingController::class, 'show']);
     Route::get('/meeting/{id}/edit', [MeetingController::class, 'edit']);
     Route::post('/meeting/{id}/update', [MeetingController::class, 'update']);
