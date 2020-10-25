@@ -24,7 +24,7 @@ class MessageController extends Controller
         $main_entries = $entries->where('user_id', Auth::id());
         $meeting_total = $meetings ->count();
         $entry_total = $main_entries->count();
-        return view('message', compact('request','messages','meetings','main_entries','entries','meeting_total','entry_total'), ['header' => 'message', 'slot'=> '']);
+        return view('message', compact('request','messages','meetings','main_entries','entries','meeting_total','entry_total'));
     }
 
     public function form($id)

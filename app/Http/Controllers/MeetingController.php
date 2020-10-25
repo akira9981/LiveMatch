@@ -20,13 +20,13 @@ class MeetingController extends Controller
     public function myMeeting(Request $request)
     {
         $meetings = DB::table('meetings')->where('user_id',Auth::id())->get();
-        return view('my_meeting',compact('meetings'),['header' => 'my meeting', 'slot'=> '']);
+        return view('my_meeting',compact('meetings'));
     }
 
     public function edit(Request $request, $id)
     {
         $meeting = Meeting::with('user')->find($id);
-        return view('edit', compact('meeting'), ['header' => 'edit', 'slot'=> '']);
+        return view('edit', compact('meeting'));
     }
 
     public function update(Request $request)
@@ -40,7 +40,7 @@ class MeetingController extends Controller
     public function delete(Request $request, $id)
     {
         $meeting = Meeting::with('user')->find($id);
-        return view('delete', compact('meeting'), ['header' => 'delete', 'slot'=> '']);
+        return view('delete', compact('meeting'));
     }
 
     public function remove(Request $request)
@@ -51,7 +51,7 @@ class MeetingController extends Controller
 
     public function create(Request $request)
     {
-        return view('create',['header' => 'create', 'slot'=> '']);
+        return view('create');
     }
 
     public function store(Request $request)
@@ -70,6 +70,6 @@ class MeetingController extends Controller
         $entries = Entry::with('user')->where('meetings_id', $id)->get();
         $total = $entries->count();
         $switching = $entries->firstWhere('user_id', Auth::id());
-        return view('meeting', compact('meeting','entries','total','switching'), ['header' => 'meeting', 'slot'=> '']);
+        return view('meeting', compact('meeting','entries','total','switching'));
     }
 }

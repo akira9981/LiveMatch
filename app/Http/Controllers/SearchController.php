@@ -30,6 +30,6 @@ class SearchController extends Controller
       $user->whereNotIn('id', [Auth::id()]);
     }
     $users = $user->get();
-    return view('search', compact('meetings','users'), ['header' => 'Search', 'slot'=> '']);
+    return view('search', compact('meetings','users'));
   }
 }
