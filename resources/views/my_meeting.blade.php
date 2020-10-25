@@ -1,4 +1,9 @@
 <x-app-layout>
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('My Meeting') }}
+        </h2>
+</x-slot>
 <a href={{url("/create")}}>募集する</a>
 <div class="main-contents">
   @foreach($meetings as $meeting)

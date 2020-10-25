@@ -1,7 +1,11 @@
 <x-app-layout>
 @inject('entry_users','App\Services\MessageService')
 
-<h1>message</h1>
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Message') }}
+        </h2>
+</x-slot>
 <p>募集</p>
 <h1>{{ $meeting_total }}件の募集中</h1><br>
 @foreach($meetings as $meeting)

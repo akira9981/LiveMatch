@@ -14,7 +14,7 @@ class MeetingController extends Controller
     public function index()
     {
         $meetings = Meeting::with('user')->whereNotIn('user_id', [Auth::id()])->get();
-        return view('home', compact('meetings'), ['header' => 'home', 'slot'=> '']);
+        return view('home', compact('meetings'));
     }
 
     public function myMeeting(Request $request)

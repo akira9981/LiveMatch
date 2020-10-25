@@ -1,5 +1,9 @@
 <x-app-layout>
-<h1>投稿ページ</h1>
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Create') }}
+        </h2>
+</x-slot>
 <div class="review-contents">
   <h1 class='pagetitle'>投稿ページ</h1>
   <form method='post' action="/create">
