@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
 <h1>投稿ページ</h1>
 <div class="review-contents">
   <h1 class='pagetitle'>投稿ページ</h1>
@@ -25,4 +23,4 @@
     </div>
   </form>
 </div>
-@endsection
+</x-app-layout>

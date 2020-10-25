@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
 <div class="main-contents">
     <div class="card-body">
         @if(!empty($meeting->user->image))
@@ -21,4 +19,4 @@
     <input type="submit" value="yes">
 </form>
 <a href={{url('my_meeting')}}>no</a>
-@endsection
+</x-app-layout>

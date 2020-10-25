@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
 <p>検索結果</p><br>
 <p>meeting</p>
 @if($meetings == '[]')
@@ -25,4 +23,4 @@
     <p>-----------</p>
   @endforeach
 @endif
-@endsection
+</x-app-layout>

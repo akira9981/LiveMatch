@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
 <h1>meeting</h1>
 <div class="card-body">
     @if(!empty($meeting->user->image))
@@ -44,4 +42,4 @@
     </div>
 @endforeach
 
-@endsection
+</x-app-layout>

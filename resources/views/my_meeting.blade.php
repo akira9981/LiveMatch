@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app-layout>
 <a href={{url("/create")}}>募集する</a>
 <div class="main-contents">
   @foreach($meetings as $meeting)
@@ -22,4 +20,4 @@
         </div>
     </div>
   @endforeach
-@endsection
+</x-app-layout>

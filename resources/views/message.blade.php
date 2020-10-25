@@ -1,6 +1,6 @@
-@extends('layouts.app')
+<x-app-layout>
 @inject('entry_users','App\Services\MessageService')
-@section('content')
+
 <h1>message</h1>
 <p>募集</p>
 <h1>{{ $meeting_total }}件の募集中</h1><br>
@@ -54,4 +54,4 @@
   </form>
 </div>
 @endif
-@endsection
+</x-app-layout>
