@@ -34,6 +34,9 @@
   @endforeach
 @endif
 
+@if($request->id == null)
+<p>ユーザーを選んでください。</p>
+@else
 <div class="review-contents">
   <h1 class='pagetitle'>フォーム</h1>
   <form method='post' action="/message">
@@ -50,4 +53,5 @@
     </div>
   </form>
 </div>
+@endif
 @endsection
