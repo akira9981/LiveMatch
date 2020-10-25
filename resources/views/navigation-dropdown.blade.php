@@ -15,11 +15,8 @@
                     <x-jet-nav-link href="/home">
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="/user/profile">
-                        {{ __('MyPage') }}
-                    </x-jet-nav-link>
-                    <x-jet-nav-link href="/create">
-                        {{ __('Create') }}
+                    <x-jet-nav-link href="/my_meeting">
+                        {{ __('MyMeeting') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="/message">
                         {{ __('Message') }}

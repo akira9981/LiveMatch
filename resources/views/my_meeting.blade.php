@@ -6,6 +6,9 @@
 </x-slot>
 <a href={{url("/create")}}>募集する</a>
 <div class="main-contents">
+@if($meetings == '[]')
+<p>現在募集をかけていません。</p>
+@else
   @foreach($meetings as $meeting)
     <div class="card-body">
         @if(!empty($meeting->user->image))
@@ -25,4 +28,5 @@
         </div>
     </div>
   @endforeach
+@endif
 </x-app-layout>
