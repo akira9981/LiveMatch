@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         @livewireStyles
 
         <!-- Scripts -->
@@ -30,9 +30,7 @@
                 </form>
                 </div>
             </header>
-            <main>
             {{ $slot }}
-            </main>
         </div>
         @stack('modals')
 

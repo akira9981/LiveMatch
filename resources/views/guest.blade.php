@@ -38,11 +38,11 @@
     {{ $header }}
     </div>
   </header>
-  <x-jet-authentication-card>
       <x-slot name="logo">
       </x-slot>
-      @foreach($meetings as $meeting)
-      <div class="card-body">
+      <div class="main-contents">
+        @foreach($meetings as $meeting)
+        <div class="card-body">
           @if(!empty($meeting->user->image))
           <div class='image-wrapper'><img class='review-image' src={{ $meeting->image }}></div>
           @else
@@ -57,7 +57,7 @@
           <div class="detail-btn">
           <a href={{url("meeting/{$meeting->id}")}}>詳細へ進む<a>
           </div>
+        </div>
+        @endforeach
       </div>
-      @endforeach
-  </x-jet-authentication-card>
 </x-guest-layout>
