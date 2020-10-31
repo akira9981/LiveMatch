@@ -23,5 +23,6 @@
       </div>
     </div>
   @endforeach
+  {{ $meetings->links() }}
 </div>
 </x-app-layout>
