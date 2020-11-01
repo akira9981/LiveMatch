@@ -1,5 +1,27 @@
+// header
+.header-wrapper{
+  display: block;
+  position: fixed;
+  width: 100%;
+  .search{
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    bottom: 25px;
+    input{
+      border: solid 1px;
+    }
+  }
+}
+
+// profile page
+.profile-contents{
+  padding-top: 150px;
+}
+
+// home page
 .main-contents{
-  padding: 20px 50px 20px;
+  padding: 150px 50px 20px;
   text-align: center;
   .card-body{
     display: inline-block;

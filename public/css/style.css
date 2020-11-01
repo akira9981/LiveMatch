@@ -1,5 +1,22 @@
+.header-wrapper {
+  display: block;
+  position: fixed;
+  width: 100%;
+}
+.header-wrapper .search {
+  display: inline-block;
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+}
+.header-wrapper .search input {
+  border: solid 1px;
+}
+.profile-contents {
+  padding-top: 150px;
+}
 .main-contents {
-  padding: 20px 50px 20px;
+  padding: 150px 50px 20px;
   text-align: center;
 }
 .main-contents .card-body {

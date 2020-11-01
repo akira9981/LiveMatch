@@ -16,7 +16,7 @@
                         {{ __('Home') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="/my_meeting">
-                        {{ __('MyMeeting') }}
+                        {{ __('My Meeting') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="/message">
                         {{ __('Message') }}
@@ -26,7 +26,7 @@
 
             <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
-                    <x-jet-dropdown align="right" width="48">
+                    <x-jet-dropdown align="right" width="48" >
                         <x-slot name="trigger">
                             <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
                                 <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
@@ -85,7 +85,6 @@
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                 this.closest('form').submit();">
@@ -110,11 +109,6 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="/dashboard" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
-        </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
@@ -134,12 +128,20 @@
                 <x-jet-responsive-nav-link href="/user/profile" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
-
-                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                <x-jet-responsive-nav-link href="/home">
+                    {{ __('Home') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="/my_meeting">
+                    {{ __('My Meeting') }}
+                </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="/message">
+                    {{ __('Message') }}
+                </x-jet-responsive-nav-link>
+                <!-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="/user/api-tokens" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
-                @endif
+                @endif -->
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

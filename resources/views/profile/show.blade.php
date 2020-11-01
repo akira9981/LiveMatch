@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="profile-contents">
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             @livewire('profile.update-profile-information-form')
 
