@@ -63,3 +63,42 @@
     }
   }
 }
+
+.message-wrapper{
+  display: flex;
+  max-height: calc(100vh - 170px);
+  min-height: calc(100vh - 170px);
+  .message-title{
+    font-weight: 700;
+  }
+  .message-list{
+    display: block;
+    text-align: left;
+    margin: 5px;
+    padding: 10px;
+    min-width: 300px;
+    border: solid 1px black;
+    overflow: scroll;
+  }
+  .message-form{
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    border: solid 1px black;
+    overflow: scroll;
+    .message{
+      display: inline-block;
+      border: solid 1px black;
+    }
+    .left-message{
+      display: block;
+      text-align: left;
+    }
+    .right-message{
+      display: block;
+      text-align: right;
+    }
+  }
+}
