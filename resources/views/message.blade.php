@@ -6,6 +6,7 @@
             {{ __('Message') }}
         </h2>
 </x-slot>
+<div class="main-contents">
 <p>募集</p>
 <h1>{{ $meeting_total }}件の募集中</h1><br>
 @foreach($meetings as $meeting)
@@ -58,4 +59,5 @@
   </form>
 </div>
 @endif
+<div class="main-contents">
 </x-app-layout>

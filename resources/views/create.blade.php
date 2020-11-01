@@ -4,6 +4,7 @@
             {{ __('Create') }}
         </h2>
 </x-slot>
+<div class="main-contents">
 <div class="review-contents">
   <h1 class='pagetitle'>投稿ページ</h1>
   <form method='post' action="/create">
@@ -26,5 +27,6 @@
       </div>
     </div>
   </form>
+</div>
 </div>
 </x-app-layout>

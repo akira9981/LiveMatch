@@ -4,6 +4,7 @@
             {{ __('Meeting') }}
         </h2>
 </x-slot>
+<div class="main-contents">
 <div class="card-body">
     @if(!empty($meeting->user->image))
     <div class='image-wrapper'><img class='review-image' src={{ $meeting->image }}></div>
@@ -45,5 +46,5 @@
         <h3 class='review-title'>{{ $entry->user->name }}</h3>
     </div>
 @endforeach
-
+</div>
 </x-app-layout>

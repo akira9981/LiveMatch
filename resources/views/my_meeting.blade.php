@@ -29,4 +29,5 @@
     </div>
   @endforeach
 @endif
+</div>
 </x-app-layout>

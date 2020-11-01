@@ -4,6 +4,7 @@
             {{ __('Search') }}
         </h2>
 </x-slot>
+<div class="main-contents">
 <p>検索結果</p><br>
 <p>meeting</p>
 @if($meetings == '[]')
@@ -28,4 +29,5 @@
     <p>-----------</p>
   @endforeach
 @endif
+</div>
 </x-app-layout>
