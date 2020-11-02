@@ -37,7 +37,6 @@
         <p>ユーザーを選んでください。</p>
       @else
         <div class="list-wrapper">
-          <p class="message-title">{{$select_user->user->name}}</p>
           @if(empty($messages))
             <p>メッセージがありません</p>
           @else
@@ -63,13 +62,13 @@
           @endif
         </div>
         <div class="form-wrapper">
-          <form method='post' action="/message">
+          <form method='post' action="/message" class="form-group">
             {{ csrf_field() }}
-              <div class="form-group">
-                <input type="hidden" name="recieve" value="{{$request->id}}" >
-                <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
-                <input type='submit' class='btn-primary' value='送信'>
-              </div>
+            <div class="message-user-image">{{$select_user->user->image}}</div>
+            <div class="message-user-name">{{$select_user->user->name}}</div>
+            <input type="hidden" name="recieve" value="{{$request->id}}" >
+            <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
+            <input type='submit' class='btn-primary' value='送信'>
           </form>
         </div>
       @endif
