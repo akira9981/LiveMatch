@@ -36,43 +36,40 @@
       @if($request->id == null)
         <p>ユーザーを選んでください。</p>
       @else
-        <p class="message-title">{{$select_user->user->name}}</p>
-        @if(empty($messages))
-          <p>メッセージがありません</p>
-        @else
-          @foreach($messages as $message)
-            @if($message->send == Auth::id())
-            <div class="right-message">
-              <div class="message">
-              {{$message->message}}<br>
-              {{$message->user->name}}<br>
-              {{$message->created_at}}<br>
+        <div class="list-wrapper">
+          <p class="message-title">{{$select_user->user->name}}</p>
+          @if(empty($messages))
+            <p>メッセージがありません</p>
+          @else
+            @foreach($messages as $message)
+              @if($message->send == Auth::id())
+              <div class="right-message">
+                <div class="message">
+                {{$message->message}}<br>
+                {{$message->user->name}}<br>
+                </div>
+                <p>{{$message->created_at}}</p>
               </div>
-            </div>
-            @else
-            <div class="left-message">
-              <div class="message">
-              {{$message->message}}<br>
-              {{$message->user->name}}<br>
-              {{$message->created_at}}<br>
+              @else
+              <div class="left-message">
+                <div class="message">
+                {{$message->message}}<br>
+                {{$message->user->name}}<br>
+                </div>
+                <p>{{$message->created_at}}</p>
               </div>
-            </div>
-            @endif
-          @endforeach
-        @endif
-        <div class="form">
+              @endif
+            @endforeach
+          @endif
+        </div>
+        <div class="form-wrapper">
           <form method='post' action="/message">
             {{ csrf_field() }}
-            <div class="review-body">
               <div class="form-group">
-                <label>メッセージ</label>
                 <input type="hidden" name="recieve" value="{{$request->id}}" >
                 <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
-              </div>
-              <div class="btn-wrapper">
                 <input type='submit' class='btn-primary' value='送信'>
               </div>
-            </div>
           </form>
         </div>
       @endif
