@@ -16,9 +16,11 @@
           {{ $meeting->title }}<br>
           <p>申請中のユーザー</p>
             @foreach($entry_users->getEntryUser($entries,$meeting->id) as $entry_user)
-            <a href={{url("message/{$entry_user->user->id}")}}>{{ $entry_user->user->name }}</a><br>
+            <div class="user-wrapper">
+              <div class="user-icon">{{$entry_user->user->image}}</div>
+              <a class="user-name" href={{url("message/{$entry_user->user->id}")}}>{{ $entry_user->user->name }}</a><br>
+            </div>
             @endforeach
-            -----------------<br>
           @endforeach
       </div>
       <div class="message-entry">
@@ -26,15 +28,17 @@
         {{$entry_total}}件の参加申請中</p>
         @foreach($main_entries as $main_entry)
         {{$main_entry->meetings->title}}<br>
-        <a href={{url("message/{$main_entry->meetings->user_id}")}}>{{$main_entry->meetings->user->name}}</a><br>
-        {{$main_entry->meetings->user->image}}
+        <div class="user-wrapper">
+          <div class="user-icon">{{$main_entry->meetings->user->image}}</div>
+          <a class="user-name" href={{url("message/{$main_entry->meetings->user_id}")}}>{{$main_entry->meetings->user->name}}</a><br>
+        </div>
         @endforeach
       </div>
     </div>
 
     <div class="message-form">
       @if($request->id == null)
-        <p>ユーザーを選んでください。</p>
+        <p class="no-select">ユーザーを選択してください。</p>
       @else
         <div class="list-wrapper">
           @if(empty($messages))

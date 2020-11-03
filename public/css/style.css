@@ -73,6 +73,24 @@
   border: solid 1px black;
   overflow: scroll;
 }
+.message-wrapper .message-list .user-wrapper .user-name {
+  color: blue;
+}
+.message-wrapper .message-list .user-wrapper .user-icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 5px 0 0 5px;
+  border: solid 1px black;
+  border-radius: 50px;
+  background-color: white;
+}
+.message-wrapper .message-list .message-mymeeting {
+  border-bottom: solid 1px black;
+}
+.message-wrapper .message-list .message-entry {
+  margin-top: 10px;
+}
 .message-wrapper .message-form {
   display: flex;
   flex-direction: column;
@@ -80,7 +98,12 @@
   margin: 5px;
   width: 100%;
   min-width: 500px;
+  background-color: #ffe1be;
   border: solid 1px black;
+}
+.message-wrapper .message-form .no-select {
+  display: inline;
+  line-height: calc(100vh - 170px);
 }
 .message-wrapper .message-form .list-wrapper {
   display: block;
@@ -88,7 +111,6 @@
   height: calc(100vh - 240px);
   width: 100%;
   padding: 10px;
-  background-color: #ffe1be;
   border: solid 1px black;
   overflow: scroll;
 }
