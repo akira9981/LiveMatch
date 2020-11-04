@@ -45,35 +45,35 @@
         <p class="no-select">ユーザーを選択してください。</p>
       @else
         <div class="list-wrapper">
-        @if(empty($messages))
-          <p>メッセージがありません</p>
-        @else
-          @foreach($messages as $message)
-            @if($message->send == Auth::id())
-            <div class="right-message">
-              <div class="message">
-              {{$message->message}}<br>
-              {{$message->user->name}}<br>
+          @if($messages->isEmpty())
+            <p class="no-select">メッセージがありません。</p>
+          @else
+            @foreach($messages as $message)
+              @if($message->send == Auth::id())
+              <div class="right-message">
+                <div class="message">
+                {{$message->message}}<br>
+                {{$message->user->name}}<br>
+                </div>
+                <p>{{$message->created_at}}</p>
               </div>
-              <p>{{$message->created_at}}</p>
-            </div>
-            @else
-            <div class="left-message">
-              <div class="message">
-              {{$message->message}}<br>
-              {{$message->user->name}}<br>
+              @else
+              <div class="left-message">
+                <div class="message">
+                {{$message->message}}<br>
+                {{$message->user->name}}<br>
+                </div>
+                <p>{{$message->created_at}}</p>
               </div>
-              <p>{{$message->created_at}}</p>
-            </div>
-            @endif
-          @endforeach
-        @endif
+              @endif
+            @endforeach
+          @endif
         </div>
         <div class="form-wrapper">
           <form method='post' action="/message" class="form-group">
             {{ csrf_field() }}
-            <div class="message-user-image">{{$select_user->user->image}}</div>
-            <div class="message-user-name">{{$select_user->user->name}}</div>
+            <div class="message-user-image">{{$select_user->image}}</div>
+            <div class="message-user-name">{{$select_user->name}}</div>
             <input type="hidden" name="recieve" value="{{$request->id}}">
             <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>
             <input type='submit' class='btn-primary' value='送信'>
