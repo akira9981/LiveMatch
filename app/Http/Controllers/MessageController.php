@@ -20,7 +20,7 @@ class MessageController extends Controller
                     })->orWhere(function($query) use($request){
                     $query->where('send', $request->id)->where('recieve', Auth::id());
                     })->get();
-        $select_user = $messages->firstWhere('send', $request->id);
+        $select_user = Message::with('user')->firstWhere('send', $request->id);
         $entries = Entry::with('user','meetings')->get();
         $main_entries = $entries->where('user_id', Auth::id());
         $meeting_total = $meetings ->count();

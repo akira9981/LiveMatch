@@ -73,10 +73,18 @@
   border: solid 1px black;
   overflow: scroll;
 }
-.message-wrapper .message-list .user-wrapper .user-name {
+.message-wrapper .message-list .meeting-wrapper {
+  margin: 10px 0;
+  padding: 5px;
+  border: solid 1px black;
+}
+.message-wrapper .message-list .meeting-wrapper .user-wrapper .user-name {
+  display: inline-block;
+  vertical-align: top;
+  margin: 13px 0 0 10px;
   color: blue;
 }
-.message-wrapper .message-list .user-wrapper .user-icon {
+.message-wrapper .message-list .meeting-wrapper .user-wrapper .user-icon {
   display: inline-block;
   height: 40px;
   width: 40px;
@@ -86,7 +94,7 @@
   background-color: white;
 }
 .message-wrapper .message-list .message-mymeeting {
-  border-bottom: solid 1px black;
+  border-bottom: solid 3px black;
 }
 .message-wrapper .message-list .message-entry {
   margin-top: 10px;
