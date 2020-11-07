@@ -11,15 +11,17 @@
     @else
     <div class='image-wrapper'><img class='review-image' src="{{ asset('images/noimage.jpg') }}"></div>
     @endif
-    <h3 class='review-title'>{{ $meeting->title }}</h3>
+    <h3 class='review-title'></h3>
     <p class='description'>
-        {{ $meeting->capacity }}
-        {{ $meeting->detail }}
+        {{ $meeting->user->name }}
+        {{ $meeting->user->age }}
+        {{ $meeting->user->gender }}
+        {{ $meeting->user->profile }}
     </p>
 
     <div class="detail-btn">
     @if($meeting->user->id == Auth::id())
-        <p>本人です</p>
+        <p></p>
     @else
         @if(empty($switching->user_id))
         <a href={{url("meeting/{$meeting->id}/entry")}}>応募する<a>
@@ -30,10 +32,9 @@
     <a href={{url("home")}}>ホームへ戻る<a>
     </div>
 </div>
-{{ $meeting->user->name }}
-{{ $meeting->user->age }}
-{{ $meeting->user->gender }}
-{{ $meeting->user->profile }}
+{{$meeting->title}}
+{{ $meeting->capacity }}
+{{ $meeting->detail }}
 <p class>{{ $total }}　人から応募があります。</p>
 
 @foreach($entries as $entry)
