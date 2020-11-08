@@ -34,7 +34,7 @@
     </div>
     <div class="meeting-detail">
         <p>{{$meeting->title}}</p>
-        <p>{{ $meeting->capacity }}</p>
+        <p>{{ $meeting->capacity }}人</p>
         <p>{{ $meeting->detail }}</p>
     </div>
 </div>

@@ -3,6 +3,7 @@
   display: block;
   position: fixed;
   width: 100%;
+  background-color: white;
   .search{
     display: inline-block;
     position: absolute;
@@ -24,6 +25,13 @@
   display: inline-block;
   .edit-body{
     display: inline-block;
+    margin: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+    .form-group{
+      display: block;
+      margin: 10px;
+    }
   }
 }
 

@@ -19,7 +19,7 @@
             {{ $meeting->detail }}<br>
             {{ $meeting->user->name }}　さん<br>
         </p>
-        <div class="detail-btn"><a href={{url("meeting/{$meeting->id}")}}>詳細へ進む<a></div>
+        <a class="detail-btn" href={{url("meeting/{$meeting->id}")}}>詳細へ進む</a>
       </div>
     </div>
   @endforeach

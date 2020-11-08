@@ -2,6 +2,7 @@
   display: block;
   position: fixed;
   width: 100%;
+  background-color: white;
 }
 .header-wrapper .search {
   display: inline-block;
@@ -20,6 +21,13 @@
 }
 .edit-wrapper .edit-body {
   display: inline-block;
+  margin: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+}
+.edit-wrapper .edit-body .form-group {
+  display: block;
+  margin: 10px;
 }
 .delete-body {
   display: inline-block;

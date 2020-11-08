@@ -1,6 +1,7 @@
 <x-guest-layout>
   <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
   <!-- Primary Navigation Menu -->
+<div class="header-wrapper">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
           <div class="flex">
@@ -13,51 +14,40 @@
 
             <!-- Navigation Links -->
             <div class="hidden space-x-2 sm:-my-px sm:ml-10 sm:flex">
-                <x-jet-nav-link href="/home" :active="request()->routeIs('dashboard')">
-                    {{ __('Home') }}
+                <x-jet-nav-link href="/login">
+                    {{ __('Login') }}
                 </x-jet-nav-link>
-                <x-jet-nav-link href="/user/profile">
-                    {{ __('MyPage') }}
-                </x-jet-nav-link>
-                <x-jet-nav-link href="/create">
-                    {{ __('Create') }}
-                </x-jet-nav-link>
-                <x-jet-nav-link href="/message">
-                    {{ __('Message') }}
+                <x-jet-nav-link href="/register">
+                    {{ __('Register') }}
                 </x-jet-nav-link>
             </div>
-            <x-jet-nav-link href="/login">
-                    {{ __('Login') }}
-            </x-jet-nav-link>
           </div>
       </div>
   </div>
-
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
     {{ $header }}
     </div>
   </header>
-      <x-slot name="logo">
-      </x-slot>
-      <div class="main-contents">
-        @foreach($meetings as $meeting)
+</div>
+    <div class="main-contents">
+      @foreach($meetings as $meeting)
         <div class="card-body">
           @if(!empty($meeting->user->image))
-          <div class='image-wrapper'><img class='review-image' src={{ $meeting->image }}></div>
+          <div class='image-wrapper'><img class='image' src={{ $meeting->image }}></div>
           @else
-          <div class='image-wrapper'><img class='review-image' src="{{ asset('images/noimage.jpg') }}"></div>
+          <div class='image-wrapper'><img class='image' src="{{ asset('images/noimage.jpg') }}"></div>
           @endif
-          <h3 class='review-title'>{{ $meeting->title }}</h3>
-          <p class='description'>
-              {{ $meeting->capacity }}<br>
-              {{ $meeting->detail }}<br>
-              {{ $meeting->user->name }}<br>
-          </p>
-          <div class="detail-btn">
-          <a href={{url("meeting/{$meeting->id}")}}>詳細へ進む<a>
+          <div class='meeting-wrapper'>
+            <div class='meeting-title'>{{ $meeting->title }}</div>
+            <p class='meeting-detail'>
+                募集人数　{{ $meeting->capacity }}人<br>
+                {{ $meeting->detail }}<br>
+                {{ $meeting->user->name }}　さん<br>
+            </p>
+            <a class="detail-btn" href={{url("meeting/{$meeting->id}")}}>詳細へ進む</a>
           </div>
         </div>
-        @endforeach
-      </div>
+      @endforeach
+    </div>
 </x-guest-layout>
