@@ -88,6 +88,46 @@
   }
 }
 
+//meeting page
+.detail-wrapper{
+  display: block;
+  .description{
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+  }
+  .detail-btn{
+    display: inline-block;
+    margin: 10px;
+  }
+  .meeting-detail{
+    display: inline-block;
+    margin: 30px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.836);
+  }
+}
+.entry-user-wrapper{
+  display: block;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.836);
+  .entry-body{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    .image{
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      margin: 5px 0 0 5px;
+      border: solid 1px black;
+      border-radius: 50px;
+      background-color: white;
+    }
+  }
+}
+
 //message page
 .message-wrapper{
   display: flex;
