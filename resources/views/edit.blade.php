@@ -6,37 +6,39 @@
 </x-slot>
 <div class="main-contents">
     <div class="card-body">
-        @if(!empty($meeting->user->image))
-        <div class='image-wrapper'><img class='review-image' src={{ $meeting->image }}></div>
-        @else
-        <div class='image-wrapper'><img class='review-image' src="{{ asset('images/noimage.jpg') }}"></div>
-        @endif
-        <h3 class='review-title'>{{ $meeting->title }}</h3>
-        <p class='description'>
-            {{ $meeting->capacity }}<br>
+      @if(!empty($meeting->user->image))
+      <div class='image-wrapper'><img class='image' src={{ $meeting->image }}></div>
+      @else
+      <div class='image-wrapper'><img class='image' src="{{ asset('images/noimage.jpg') }}"></div>
+      @endif
+      <div class='meeting-wrapper'>
+        <div class='meeting-title'>{{ $meeting->title }}</div>
+        <p class='meeting-detail'>
+            募集人数　{{ $meeting->capacity }}人<br>
             {{ $meeting->detail }}<br>
-            {{ $meeting->user->name }}<br>
+            {{ $meeting->user->name }}　さん<br>
         </p>
-    </div>
-    <form method='post' action="/meeting/{{$meeting->id}}/update">
-    {{ csrf_field() }}
-    <div class="review-body">
-      <div class="form-group">
-        <label>title</label>
-        <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
-      </div>
-      <div class="form-group">
-        <label>募集人数</label>
-        <input type='number' class='form-control' name='capacity' placeholder='人数を入力' min="1" max="100">
-      </div>
-      <div class="form-group">
-        <label>詳細</label>
-        <input type='text' class='form-control' name='detail' placeholder='詳細を入力'>
-      </div>
-      <div class="btn-wrapper">
-        <input type='submit' class='btn-primary' value='募集する'>
       </div>
     </div>
-  </form>
+    <form class="edit-wrapper" method='post' action="/meeting/{{$meeting->id}}/update">
+      {{ csrf_field() }}
+      <div class="edit-body">
+        <div class="form-group">
+          <label>title</label>
+          <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
+        </div>
+        <div class="form-group">
+          <label>募集人数</label>
+          <input type='number' class='form-control' name='capacity' placeholder='人数を入力' min="1" max="100">
+        </div>
+        <div class="form-group">
+          <label>詳細</label>
+          <input type='text' class='form-control' name='detail' placeholder='詳細を入力'>
+        </div>
+        <div class="btn-wrapper">
+          <input type='submit' class='btn-primary' value='編集する'>
+        </div>
+      </div>
+    </form>
 </div>
 </x-app-layout>

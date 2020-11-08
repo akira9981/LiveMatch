@@ -19,6 +19,22 @@
   padding-top: 150px;
 }
 
+//edit page
+.edit-wrapper{
+  display: inline-block;
+  .edit-body{
+    display: inline-block;
+  }
+}
+
+//delete page
+.delete-body{
+  display: inline-block;
+  margin: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+}
+
 // home page
 .main-contents{
   padding: 150px 50px 20px;
