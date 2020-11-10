@@ -61,9 +61,16 @@
 
         <!-- Age -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="age" value="{{ __('Name') }}" />
+            <x-jet-label for="age" value="{{ __('Age') }}" />
             <x-jet-input id="age" type="number" class="mt-1 block w-full" wire:model.defer="state.age" autocomplete="age" />
             <x-jet-input-error for="age" class="mt-2" />
+        </div>
+
+        <!-- Gender -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label value="{{ __('Gender') }}" />
+            <input class="inline-block mt-1" type="radio" name="gender" value="male" checked="checked" />男性
+            <input class="inline-block mt-1 ml-2" type="radio" name="gender" value="female" />女性
         </div>
 
         <!-- Email -->
@@ -71,6 +78,13 @@
             <x-jet-label for="email" value="Email" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
+        </div>
+
+        <!-- Profile -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="profile" value="{{ __('Profile') }}" />
+            <textarea id="profile" type="text" class="mt-1 block w-full shadow border" wire:model.defer="state.profile" autocomplete="name"></textarea>
+            <x-jet-input-error for="profile" class="mt-2" />
         </div>
     </x-slot>
 
