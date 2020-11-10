@@ -11,12 +11,18 @@
 
             <div>
                 <x-jet-label value="{{ __('Name') }}" />
-                <x-jet-input class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                <x-jet-input class="block mt-1 mb-3 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div>
                 <x-jet-label value="{{ __('Age') }}" />
-                <x-jet-input class="block mt-1 w-full" type="number" name="age" :value="old('age')" required />
+                <x-jet-input class="block mt-1 mb-3 w-full" type="number" name="age" :value="old('age')" required />
+            </div>
+
+            <div>
+                <x-jet-label value="{{ __('Gender') }}" />
+                <input class="inline-block mt-1" type="radio" name="gender" value="male" checked="checked" />男性
+                <input class="inline-block mt-1 ml-2" type="radio" name="gender" value="female" />女性
             </div>
 
             <div class="mt-4">
