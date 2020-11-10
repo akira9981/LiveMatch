@@ -20,6 +20,39 @@
   padding-top: 150px;
 }
 
+//create page
+  .post-body{
+    padding: 30px;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+    .form-group{
+      display: block;
+      margin: 30px;
+      text-align: left;
+      label{
+        font-size: 20px;
+        margin: 10px;
+      }
+      input{
+        width: 80%;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.836);
+      }
+      textarea{
+        width: 80%;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.836);
+      }
+    }
+    .create-btn{
+      display: inline-block;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+      background-color: white;
+      input{
+        background-color: white;
+      }
+    }
+  }
+
 //edit page
 .edit-wrapper{
   display: inline-block;
@@ -81,6 +114,7 @@
       .detail-btn{
         display: inline;
         padding: 5px;
+        border-radius: 10px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.836);
         background-color: white;
       }

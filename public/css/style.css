@@ -16,6 +16,37 @@
 .profile-contents {
   padding-top: 150px;
 }
+.post-body {
+  padding: 30px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+}
+.post-body .form-group {
+  display: block;
+  margin: 30px;
+  text-align: left;
+}
+.post-body .form-group label {
+  font-size: 20px;
+  margin: 10px;
+}
+.post-body .form-group input {
+  width: 80%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.836);
+}
+.post-body .form-group textarea {
+  width: 80%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.836);
+}
+.post-body .create-btn {
+  display: inline-block;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.836);
+  background-color: white;
+}
+.post-body .create-btn input {
+  background-color: white;
+}
 .edit-wrapper {
   display: inline-block;
 }
@@ -75,6 +106,7 @@
 .main-contents .card-body .meeting-wrapper .detail-btn {
   display: inline;
   padding: 5px;
+  border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.836);
   background-color: white;
 }
