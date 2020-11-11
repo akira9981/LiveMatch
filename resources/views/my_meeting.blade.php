@@ -23,11 +23,9 @@
             募集人数　{{ $meeting->capacity }}人<br>
             {{ $meeting->detail }}<br>
         </p>
-        <div class="detail-btn">
-          <a href={{url("meeting/{$meeting->id}/edit")}}>編集する</a>
-          <a href={{url("meeting/{$meeting->id}/delete")}}>削除する</a>
-          <a href={{url("meeting/{$meeting->id}")}}>詳細へ進む</a>
-        </div>
+        <div class="detail-btn"><a href={{url("meeting/{$meeting->id}/edit")}}>編集する</a></div>
+        <div class="detail-btn"><a href={{url("meeting/{$meeting->id}/delete")}}>削除する</a></div>
+        <div class="detail-btn"><a href={{url("meeting/{$meeting->id}")}}>詳細へ進む</a></div>
       </div>
     </div>
   @endforeach

@@ -30,6 +30,7 @@
   margin: 10px;
 }
 .post-body .form-group input {
+  height: 30px;
   width: 80%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.836);
 }
