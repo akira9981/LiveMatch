@@ -18,25 +18,100 @@ class MeetingsTableSeeder extends Seeder
     {
       DB::table('meetings')->insert([
         [
-            'title' => 'title1',
+            'title' => 'サマソニ１日目！',
             'capacity' => 3,
-            'detail' => 'Anyone OK',
-            'image' => 's3 URL',
+            'detail' => '誰でもOKです。',
+            'user_id' => 1,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'fuji rock ３日間',
+            'capacity' => 2,
+            'detail' => '同年代の方でお願いします。',
+            'user_id' => 2,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'ホルモン zepp難波',
+            'capacity' => 8,
+            'detail' => 'ホルモン好き　誰でも。',
+            'user_id' => 3,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'ミスチル 舞踏館',
+            'capacity' => 5,
+            'detail' => 'ミスチル好き　誰でも。',
+            'user_id' => 4,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'ヒゲダン　名古屋',
+            'capacity' => 2,
+            'detail' => 'ヒゲダン好き　誰でも。',
             'user_id' => 5,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
         ],
         [
-            'title' => 'title2',
-            'capacity' => 10,
-            'detail' => 'Anyone OK',
-            'image' => 's3 URL',
-            'user_id' => 6,
+            'title' => '大阪見放題　2020',
+            'capacity' => 5,
+            'detail' => 'ニガミ以外　どこでも',
+            'user_id' => 1,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
         ],
         [
-            'title' => 'title3',
-            'capacity' => 100,
-            'detail' => 'Anyone OK',
-            'image' => 's3 URL',
-            'user_id' => 7,
+            'title' => 'Lisa 東京公演',
+            'capacity' => 20,
+            'detail' => '最前　死守',
+            'user_id' => 2,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'キングヌー 東京公演',
+            'capacity' => 20,
+            'detail' => '最前　死守',
+            'user_id' => 3,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'クリーピーナッツ 東京公演',
+            'capacity' => 2,
+            'detail' => '最前　死守',
+            'user_id' => 4,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'ホロライブ 東京公演',
+            'capacity' => 6,
+            'detail' => '最前　死守',
+            'user_id' => 5,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'ノットフェス　tokyo',
+            'capacity' => 6,
+            'detail' => '最前　死守',
+            'user_id' => 1,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
+        ],
+        [
+            'title' => 'CDJ ２日間',
+            'capacity' => 2,
+            'detail' => 'チケット定価で譲ります。',
+            'user_id' => 2,
+            'created_at' => '2020-11-10 10:59:58',
+            'updates_at' => '2020-11-10 10:59:58'
         ],
       ]);
     }
