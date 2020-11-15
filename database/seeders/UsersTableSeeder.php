@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test@gmail.com',
             'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
             'created_at' => '2020-11-10 08:59:58',
-            'updates_at' => '2020-11-10 08:59:58'
+            'updated_at' => '2020-11-10 08:59:58'
         ],
         [
             'name' => 'test2',
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test2@gmail.com',
             'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
             'created_at' => '2020-11-10 08:59:58',
-            'updates_at' => '2020-11-10 08:59:58'
+            'updated_at' => '2020-11-10 08:59:58'
         ],
         [
             'name' => 'test3',
@@ -45,7 +45,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test3@gmail.com',
             'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
             'created_at' => '2020-11-10 08:59:58',
-            'updates_at' => '2020-11-10 08:59:58'
+            'updated_at' => '2020-11-10 08:59:58'
         ],
         [
             'name' => 'test4',
@@ -55,7 +55,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test4@gmail.com',
             'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
             'created_at' => '2020-11-10 08:59:58',
-            'updates_at' => '2020-11-10 08:59:58'
+            'updated_at' => '2020-11-10 08:59:58'
         ],
         [
             'name' => 'test5',
@@ -65,7 +65,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test5@gmail.com',
             'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
             'created_at' => '2020-11-10 08:59:58',
-            'updates_at' => '2020-11-10 08:59:58'
+            'updated_at' => '2020-11-10 08:59:58'
         ],
       ]);
     }
