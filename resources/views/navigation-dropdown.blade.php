@@ -21,6 +21,9 @@
                     <x-jet-nav-link href="/message">
                         {{ __('Message') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="/create">
+                        {{ __('Create') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
