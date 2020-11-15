@@ -18,28 +18,54 @@ class UsersTableSeeder extends Seeder
     {
       DB::table('users')->insert([
         [
-            'name' => 'test１',
+            'name' => 'test1',
             'age' => 20,
-            'gender' => 1,
-            'profile' => 'testtesttesttesttesttest',
+            'gender' => 'male',
+            'profile' => '初めまして。よろしくお願いします',
             'email' => 'test@gmail.com',
-            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe'
+            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
+            'created_at' => '2020-11-10 08:59:58',
+            'updates_at' => '2020-11-10 08:59:58'
         ],
         [
             'name' => 'test2',
-            'age' => 100,
-            'gender' => 2,
-            'profile' => 'ああああああああああああああ',
+            'age' => 21,
+            'gender' => 'female',
+            'profile' => 'こんにちわ！誰でもOK',
             'email' => 'test2@gmail.com',
-            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe'
+            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
+            'created_at' => '2020-11-10 08:59:58',
+            'updates_at' => '2020-11-10 08:59:58'
         ],
         [
             'name' => 'test3',
-            'age' => 5,
-            'gender' => 1,
-            'profile' => '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@',
+            'age' => 27,
+            'gender' => 'male',
+            'profile' => 'ロック大好きです！',
             'email' => 'test3@gmail.com',
-            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe'
+            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
+            'created_at' => '2020-11-10 08:59:58',
+            'updates_at' => '2020-11-10 08:59:58'
+        ],
+        [
+            'name' => 'test4',
+            'age' => 40,
+            'gender' => 'female',
+            'profile' => 'ジャズ大好きです！',
+            'email' => 'test4@gmail.com',
+            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
+            'created_at' => '2020-11-10 08:59:58',
+            'updates_at' => '2020-11-10 08:59:58'
+        ],
+        [
+            'name' => 'test5',
+            'age' => 33,
+            'gender' => 'male',
+            'profile' => 'EDM大好きです！',
+            'email' => 'test5@gmail.com',
+            'password' => '$2y$10$9PGTNLdq3cp9onaO8pirUuCqpUCsFF33GLHC4Y10e0izYBjf2UqSe',
+            'created_at' => '2020-11-10 08:59:58',
+            'updates_at' => '2020-11-10 08:59:58'
         ],
       ]);
     }
