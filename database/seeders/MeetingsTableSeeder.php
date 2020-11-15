@@ -23,7 +23,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '誰でもOKです。',
             'user_id' => 1,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'fuji rock ３日間',
@@ -31,7 +31,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '同年代の方でお願いします。',
             'user_id' => 2,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'ホルモン zepp難波',
@@ -39,7 +39,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => 'ホルモン好き　誰でも。',
             'user_id' => 3,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'ミスチル 舞踏館',
@@ -47,7 +47,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => 'ミスチル好き　誰でも。',
             'user_id' => 4,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'ヒゲダン　名古屋',
@@ -55,7 +55,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => 'ヒゲダン好き　誰でも。',
             'user_id' => 5,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => '大阪見放題　2020',
@@ -63,7 +63,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => 'ニガミ以外　どこでも',
             'user_id' => 1,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'Lisa 東京公演',
@@ -71,7 +71,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '最前　死守',
             'user_id' => 2,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'キングヌー 東京公演',
@@ -79,7 +79,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '最前　死守',
             'user_id' => 3,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'クリーピーナッツ 東京公演',
@@ -87,7 +87,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '最前　死守',
             'user_id' => 4,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'ホロライブ 東京公演',
@@ -95,7 +95,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '最前　死守',
             'user_id' => 5,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'ノットフェス　tokyo',
@@ -103,7 +103,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => '最前　死守',
             'user_id' => 1,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
         [
             'title' => 'CDJ ２日間',
@@ -111,7 +111,7 @@ class MeetingsTableSeeder extends Seeder
             'detail' => 'チケット定価で譲ります。',
             'user_id' => 2,
             'created_at' => '2020-11-10 10:59:58',
-            'updates_at' => '2020-11-10 10:59:58'
+            'updated_at' => '2020-11-10 10:59:58'
         ],
       ]);
     }
