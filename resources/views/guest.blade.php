@@ -20,6 +20,9 @@
                 <x-jet-nav-link href="/register">
                     {{ __('Register') }}
                 </x-jet-nav-link>
+                <x-jet-nav-link href="/register">
+                    {{ __('test') }}
+                </x-jet-nav-link>
             </div>
           </div>
       </div>
