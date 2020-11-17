@@ -43,7 +43,7 @@ class EntriesTableSeeder extends Seeder
             'created_at' => '2020-10-19 21:26:35'
         ],
         [
-            'user_id' => 1,
+            'user_id' => 3,
             'meetings_id' => 6,
             'created_at' => '2020-10-19 21:26:35'
         ],
