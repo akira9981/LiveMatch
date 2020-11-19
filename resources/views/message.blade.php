@@ -18,7 +18,7 @@
             <p>申請中のユーザー</p>
             @foreach($entry_users->getEntryUser($entries,$meeting->id) as $entry_user)
             <div class="user-wrapper">
-              <div class="user-icon">{{$entry_user->user->image}}</div>
+              <div class="user-icon">{{$entry_user->user->profile_photo_path}}</div>
               <a class="user-name" href={{url("message/{$entry_user->user->id}")}}>{{ $entry_user->user->name }}</a><br>
             </div>
             @endforeach
@@ -32,7 +32,7 @@
         <div class="meeting-wrapper">
           {{$main_entry->meetings->title}}<br>
           <div class="user-wrapper">
-            <div class="user-icon">{{$main_entry->meetings->user->image}}</div>
+            <div class="user-icon">{{$main_entry->meetings->user->profile_photo_path}}</div>
             <a class="user-name" href={{url("message/{$main_entry->meetings->user_id}")}}>{{$main_entry->meetings->user->name}}</a><br>
           </div>
         </div>
@@ -72,7 +72,7 @@
         <div class="form-wrapper">
           <form method='post' action="/message" class="form-group">
             {{ csrf_field() }}
-            <div class="message-user-image">{{$select_user->image}}</div>
+            <div class="message-user-image">{{$select_user->profile_photo_path}}</div>
             <div class="message-user-name">{{$select_user->name}}</div>
             <input type="hidden" name="recieve" value="{{$request->id}}">
             <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>

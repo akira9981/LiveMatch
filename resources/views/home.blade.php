@@ -15,9 +15,9 @@
       <div class='meeting-wrapper'>
         <div class='meeting-title'>{{ $meeting->title }}</div>
         <p class='meeting-detail'>
-            募集人数　{{ $meeting->capacity }}人<br>
+            募集人数 {{ $meeting->capacity }}人<br>
             {{ $meeting->detail }}<br>
-            {{ $meeting->user->name }}　さん<br>
+            {{ $meeting->user->name }} さん<br>
         </p>
         <a class="detail-btn" href={{url("meeting/{$meeting->id}")}}>詳細へ進む</a>
       </div>
