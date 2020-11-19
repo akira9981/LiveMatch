@@ -7,8 +7,8 @@
 <div class="main-contents">
   @foreach($meetings as $meeting)
     <div class="card-body">
-      @if(!empty($meeting->user->image))
-      <div class='image-wrapper'><img class='image' src={{ $meeting->image }}></div>
+      @if(!empty($meeting->user->profile_photo_path))
+      <div class='image-wrapper'><img class='image' src={{ $meeting->user->profile_photo_path }}></div>
       @else
       <div class='image-wrapper'><img class='image' src="{{ asset('images/noimage.jpg') }}"></div>
       @endif
