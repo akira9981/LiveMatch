@@ -23,7 +23,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'profile' => ['required'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'image', 'max:1024'],
-            'profile_photo_url' => ['required'],
+            'profile_photo_path' => ['required'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -35,7 +35,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'age' => $input['age'],
             'profile' => $input['profile'],
             'email' => $input['email'],
-            'photo' => $input['profile_photo_url'],
+            'photo' => $input['profile_photo_path'],
         ])->save();
     }
 }
