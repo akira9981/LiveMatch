@@ -68,9 +68,9 @@
 
         <!-- Gender -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label value="{{ __('Gender') }}" />
-            <input class="inline-block mt-1" type="radio" name="gender" value="male" checked="checked" />男性
-            <input class="inline-block mt-1 ml-2" type="radio" name="gender" value="female" />女性
+            <x-jet-label for="gender" value="{{ __('Gender') }}" />
+            <input class="inline-block mt-1" type="radio" name="gender" value="male" checked="checked" wire:model.defer="state.gender">男性
+            <input class="inline-block mt-1 ml-2" type="radio" name="gender" value="female" wire:model.defer="state.gender"/>女性
         </div>
 
         <!-- Email -->
