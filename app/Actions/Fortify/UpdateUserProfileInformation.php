@@ -5,6 +5,7 @@ namespace App\Actions\Fortify;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Storage;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -28,8 +29,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
-            
             $user->updateProfilePhoto($input['photo']);
+            $image = $input['photo'];
+            $path = Storage::disk('s3')->putFile('/', $image, 'public');
         }
 
         $user->forceFill([
