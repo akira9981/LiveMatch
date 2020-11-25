@@ -9,7 +9,7 @@
     {{ csrf_field() }}
     <div class="post-body">
       <div class="form-group">
-        <label>title</label>
+        <label>タイトル</label>
         <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
       </div>
       <div class="form-group">
