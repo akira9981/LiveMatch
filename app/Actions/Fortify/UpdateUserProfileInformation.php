@@ -31,7 +31,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         if (isset($input['photo'])) {
             $user->updateProfilePhoto($input['photo']);
             $image = $input['photo'];
-            $path = Storage::disk('s3')->putFile('/', $image, 'public');
+            $path = Storage::disk('s3')->putFile('live-match', $image, 'public');
         }
 
         $user->forceFill([
