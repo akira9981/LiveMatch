@@ -12,6 +12,7 @@
         <label>タイトル</label>
         <input type='text' class='form-control' name='title' placeholder='タイトルを入力'>
       </div>
+
       
       <div class="form-group">
         <label>募集人数</label>
