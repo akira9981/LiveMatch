@@ -32,6 +32,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->updateProfilePhoto($input['photo']);
             $image = $input['photo'];
             $path = Storage::disk('s3')->putFile('live-match', $image, 'public');
+            $avatarPath = Storage::disk('s3')->url($path);
         }
 
         $user->forceFill([
