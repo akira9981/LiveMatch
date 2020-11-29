@@ -5,6 +5,7 @@ namespace App\Actions\Fortify;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use App\Models\User;
 use Storage;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
@@ -33,6 +34,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $image = $input['photo'];
             $path = Storage::disk('s3')->putFile('live-match', $image, 'public');
             $avatarPath = Storage::disk('s3')->url($path);
+            $data = ['profile_photo_path' => $avatarPath];
         }
 
         $user->forceFill([
@@ -41,6 +43,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'gender' => $input['gender'],
             'profile' => $input['profile'],
             'email' => $input['email'],
+            'profile_photo_path' => $avatarPath,
         ])->save();
     }
 }
