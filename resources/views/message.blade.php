@@ -18,7 +18,11 @@
             <p>申請中のユーザー</p>
             @foreach($entry_users->getEntryUser($entries,$meeting->id) as $entry_user)
             <div class="user-wrapper">
-              <div class="user-icon">{{$entry_user->user->profile_photo_path}}</div>
+              @if(!empty($entry_user->user->profile_photo_path))
+              <img class="user-icon" src="{{ $entry_user->user->profile_photo_path }}" />
+              @else
+              <img class="user-icon" src="{{ asset('images/noimage.jpg') }}" />
+              @endif
               <a class="user-name" href={{url("message/{$entry_user->user->id}")}}>{{ $entry_user->user->name }}</a><br>
             </div>
             @endforeach
@@ -32,7 +36,11 @@
         <div class="meeting-wrapper">
           {{$main_entry->meetings->title}}<br>
           <div class="user-wrapper">
-            <div class="user-icon">{{$main_entry->meetings->user->profile_photo_path}}</div>
+            @if(!empty($main_entry->meetings->user->profile_photo_path))
+            <img class="user-icon" src="{{ $main_entry->meetings->user->profile_photo_path }} " />
+            @else
+            <img class="user-icon" src="{{ asset('images/noimage.jpg') }}" />
+            @endif
             <a class="user-name" href={{url("message/{$main_entry->meetings->user_id}")}}>{{$main_entry->meetings->user->name}}</a><br>
           </div>
         </div>
