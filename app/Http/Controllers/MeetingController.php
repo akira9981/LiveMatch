@@ -13,7 +13,7 @@ class MeetingController extends Controller
 {
     public function index()
     {
-        $meetings = Meeting::with('user')->whereNotIn('user_id', [Auth::id()])->paginate(8);
+        $meetings = Meeting::with('user')->whereNotIn('user_id', [Auth::id()])->orderBy('created_at', 'DESC')->paginate(8);
         return view('home', compact('meetings'));
     }
 
