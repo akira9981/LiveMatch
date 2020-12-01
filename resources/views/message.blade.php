@@ -80,7 +80,7 @@
         <div class="form-wrapper">
           <form method='post' action="/message" class="form-group">
             {{ csrf_field() }}
-            <div class="message-user-image">{{$select_user->profile_photo_path}}</div>
+            <img class="message-user-image" src=" {{$select_user->profile_photo_path}} " />
             <div class="message-user-name">{{$select_user->name}}</div>
             <input type="hidden" name="recieve" value="{{$request->id}}">
             <input type='text' class='form-control' name='message' placeholder='メッセージを入力'>

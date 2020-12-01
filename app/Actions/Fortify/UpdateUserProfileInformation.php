@@ -29,12 +29,13 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'profile_photo_path' => ['nullable', 'string', 'max:255'],
         ])->validateWithBag('updateProfileInformation');
 
+            $avatarPath = null;
+
         if (isset($input['photo'])) {
             $user->updateProfilePhoto($input['photo']);
             $image = $input['photo'];
             $path = Storage::disk('s3')->putFile('live-match', $image, 'public');
             $avatarPath = Storage::disk('s3')->url($path);
-            $data = ['profile_photo_path' => $avatarPath];
         }
 
         $user->forceFill([
