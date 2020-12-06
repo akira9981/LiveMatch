@@ -14,6 +14,7 @@
             </div>
         @endif
 
+
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('password.email') }}">
