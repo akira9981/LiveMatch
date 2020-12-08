@@ -10,6 +10,10 @@
                     </a>
                 </div>
 
+                <div class="flex items-center px-5">
+                    <p>Live Match</p>
+                </div>
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-2 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="/home">
