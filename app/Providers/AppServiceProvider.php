@@ -26,8 +26,5 @@ class AppServiceProvider extends ServiceProvider
     {
         View::share('header' , '');
         View::share('slot' , '');
-        if (\App::environment('production')) {
-            \URL::forceScheme('https');
-        }
     }
 }
