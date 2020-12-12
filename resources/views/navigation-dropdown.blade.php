@@ -148,6 +148,9 @@
                 <x-jet-responsive-nav-link href="/message">
                     {{ __('Message') }}
                 </x-jet-responsive-nav-link>
+                <x-jet-responsive-nav-link href="/create">
+                    {{ __('Create') }}
+                </x-jet-responsive-nav-link>
                 <!-- @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="/user/api-tokens" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
