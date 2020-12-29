@@ -113,6 +113,14 @@ class MeetingsTableSeeder extends Seeder
             'created_at' => '2020-11-10 10:59:59',
             'updated_at' => '2020-11-10 10:59:59'
         ],
+        [
+            'title' => 'CDJ 最終日',
+            'capacity' => 2,
+            'detail' => 'チケット定価で譲ります。',
+            'user_id' => 4,
+            'created_at' => '2020-11-11 10:59:59',
+            'updated_at' => '2020-11-11 10:59:59'
+        ],
       ]);
     }
 }
