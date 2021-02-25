@@ -28,6 +28,7 @@ class MessageController extends Controller
         return view('message', compact('request','messages','select_user','meetings','main_entries','entries','meeting_total','entry_total'));
     }
 
+    
     public function form($id)
     {
         $messages = Message::with('user')->where('recive', $id);
